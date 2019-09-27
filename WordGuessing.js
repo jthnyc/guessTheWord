@@ -5,7 +5,7 @@ let totalLoseCount = 0;
 
 let spacingInDom = document.getElementsByClassName("spacing");
 let wrongGuessesInDom = document.getElementsByClassName("wrongGuess")
-let numOfGuessInDom = document.getElementsByClassName("guessCount")
+let numOfGuessesInDom = document.getElementsByClassName("guessCount")
 let totalWinInDom = document.getElementsByClassName("winCount")
 let totalLostInDom = document.getElementsByClassName("loseCount")
 
@@ -14,17 +14,17 @@ function loadDoc() {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       // response returns as a long string with return symbol that separates the words
-      var response = this.responseText;
-      var splittedArray = response.split("\n");
+      let response = this.responseText;
+      let splittedArray = response.split("\n");
 
       // use a random index to help select a word from the array
-      var randomIdx = Math.floor(Math.random() * splittedArray.length);
-      var selectedWord = splittedArray[randomIdx];
+      let randomIdx = Math.floor(Math.random() * splittedArray.length);
+      let selectedWord = splittedArray[randomIdx];
       console.log(selectedWord)
 
       // once we know what the selected word is, create corresponding spacing to show to player
-      var selectedWordSpacing = [];
-      for (var j=0; j<selectedWord.length; j++) {
+      let selectedWordSpacing = [];
+      for (let j=0; j<selectedWord.length; j++) {
         selectedWordSpacing.push("_");
       }
       console.log(selectedWordSpacing);
@@ -32,10 +32,11 @@ function loadDoc() {
 
       // handle player input
       document.addEventListener('keypress', (event) => {
-      var keyChar = String.fromCharCode(event.keyCode);
+      let keyChar = String.fromCharCode(event.keyCode);
       console.log(keyChar);  
-      var indexOfChar = selectedWord.indexOf(keyChar);
+      let indexOfChar = selectedWord.indexOf(keyChar);
 
+      // if the index exists, it matches
       if (indexOfChar > -1) {
         console.log("correct!")
         selectedWordSpacing[indexOfChar] = keyChar;
@@ -46,9 +47,9 @@ function loadDoc() {
         wrongChar.push(keyChar);
         totalGuessCount--;
         wrongGuessesInDom[0].innerHTML = wrongChar;
-        numOfGuessInDom[0].innerHTML = totalGuessCount;
+        numOfGuessesInDom[0].innerHTML = totalGuessCount;
       }
-      newFunction(selectedWordSpacing, selectedWord);
+      displayResult(selectedWordSpacing, selectedWord);
 
     })
 
@@ -58,7 +59,7 @@ function loadDoc() {
   xhttp.send();
 }
 
-function newFunction(selectedWordSpacing, selectedWord) {
+function displayResult(selectedWordSpacing, selectedWord) {
   if (selectedWordSpacing.join("") === selectedWord) {
     alert('You won!');
     totalWinCount++;

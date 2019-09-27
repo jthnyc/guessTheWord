@@ -1,6 +1,16 @@
+h1 {
+  padding: .60rem 0;
+  text-align: center;
+  background-color: #cca353;
+  font-family: Poppins, sans-serif;
+  font-size: 1.8rem;
+  color: #fff;
+  margin: 0 -9999rem;
+}
+
 header {
-  border: 3px red;
   font-size: 20px;
+  font-family: Poppins, sans-serif;
   font-style: italic;
   text-align: center;
   margin: 2 auto;
@@ -15,11 +25,13 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 18px;
+  font-weight: bold;
 }
 
 .spacing {
   border: 3px solid black;
   font-size: 60px;
+  font-family: Poppins, sans-serif;
   text-align: center;
   margin: 2 auto;
 }
@@ -27,6 +39,7 @@ button {
 .wrongGuess {
   border: 3px solid black;
   font-size: 30px;
+  font-family: Poppins, sans-serif;
   text-align: center;
   margin: 2 auto;
 }
@@ -34,6 +47,7 @@ button {
 .guessCount {
   border: 3px solid black;
   font-size: 30px;
+  font-family: Poppins, sans-serif;
   text-align: center;
   margin: 2 auto;
 }
@@ -41,6 +55,8 @@ button {
 .winCount {
   border: 1px solid black;
   font-size: 30px;
+  font-family: Poppins, sans-serif;
+  font-weight: bold; 
   text-align: left;
   margin: 2 auto;
 }
@@ -48,6 +64,8 @@ button {
 .loseCount {
   border: 1px solid black;
   font-size: 30px;
+  font-family: Poppins, sans-serif;
+  font-weight: bold;
   text-align: left;
   margin: 2 auto;
 }
@@ -56,12 +74,5 @@ body {
   background-color:whitesmoke;
 }
 
-h1 {
-  padding: .60rem 0;
-  text-align: center;
-  background-color: #cca353;
-  font-family: Poppins, sans-serif;
-  font-size: 1.8rem;
-  color: #fff;
-}
+
 
